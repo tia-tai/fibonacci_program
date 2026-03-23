@@ -13,13 +13,25 @@ public class Fibonacci implements FibonacciLike{
     }
 
     // Methods
-    public void calculate() {
+    public void calculateIterative() {
         sequence.add(number1);
         sequence.add(number2);
         for (int i = 0; i < amountofNumbersInSequence-2; i++) {
             sequence.add(sequence.get(i) + sequence.get(i+1));
         }
-    };
+    }
+
+    public void calculateRecursive(int num1, int num2) {
+        if (sequence.size() < 2) {
+            sequence.add(num1);
+            sequence.add(num2);
+        }
+        if (sequence.size() < amountofNumbersInSequence) {
+            int result = num1 + num2;
+            sequence.add(result);
+            calculateRecursive(num2, result);
+        }
+    }
 
     public int getAmountofNumbersInSequence() {
         return amountofNumbersInSequence;

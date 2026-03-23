@@ -5,5 +5,6 @@ public interface FibonacciLike {
     int number2 = 0;
 
     // Methods
-    void calculate();
+    void calculateIterative();
+    void calculateRecursive(int num1, int num2);
 }
